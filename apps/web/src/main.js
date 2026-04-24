@@ -95,6 +95,16 @@ function getPendingInput() {
   return "";
 }
 
+function updateSubmitButtonState() {
+  const submitButton = document.querySelector('[data-action="submit-turn"]');
+  if (!(submitButton instanceof HTMLButtonElement)) {
+    return;
+  }
+
+  const settingsReady = Boolean(state.settings.apiKey.trim());
+  submitButton.disabled = state.ui.generating || !getPendingInput() || !settingsReady;
+}
+
 function getBranchLabel(beat) {
   const seed = beat.userInput || beat.content;
   const text = seed.trim().replace(/\s+/g, " ");
@@ -205,7 +215,7 @@ function renderBranchChooser(beat) {
 function renderConnector(beat) {
   const isOpen = state.ui.openMenuBeatId === beat.id;
   return `
-    <div class="connector">
+    <div class="connector${isOpen ? " is-open" : ""}">
       <button class="overflow-button" data-action="toggle-menu" data-beat-id="${beat.id}" aria-expanded="${isOpen ? "true" : "false"}" aria-label="更多操作">
         <span>&#8942;</span>
       </button>
@@ -565,6 +575,7 @@ document.addEventListener("input", (event) => {
   if (target.name === "composerInput") {
     state.ui.composerInput = target.value;
     setError("");
+    updateSubmitButtonState();
     return;
   }
 
