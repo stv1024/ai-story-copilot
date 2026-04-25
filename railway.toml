@@ -9,7 +9,7 @@ watchPatterns = [
 ]
 
 [deploy]
-startCommand = "npm --workspace @ai-story-copilot/web run preview -- --host 0.0.0.0 --port $PORT"
+startCommand = "npm --workspace @ai-story-copilot/web run preview -- --port $PORT"
 healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
