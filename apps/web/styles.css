@@ -160,6 +160,14 @@ a {
   margin-bottom: 18px;
 }
 
+.hero-status-row {
+  margin-top: 14px;
+}
+
+.hero-action-row {
+  margin-top: 16px;
+}
+
 .hero-card::after {
   content: "";
   position: absolute;
