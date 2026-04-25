@@ -417,8 +417,6 @@ a {
 }
 
 .composer-card {
-  position: sticky;
-  bottom: max(12px, env(safe-area-inset-bottom));
   display: grid;
   gap: 14px;
   background: rgba(255, 250, 243, 0.96);
