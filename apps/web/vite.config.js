@@ -60,4 +60,7 @@ function promptAssetsPlugin() {
 
 export default defineConfig({
   plugins: [vue(), promptAssetsPlugin()],
+  server: {
+    port: 5183,
+  },
 });
