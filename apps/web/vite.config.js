@@ -64,6 +64,6 @@ export default defineConfig({
     port: 5183,
   },
   preview: {
-    allowedHosts: true,
+    allowedHosts: ["healthcheck.railway.app", ".up.railway.app"],
   },
 });

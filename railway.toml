@@ -10,7 +10,7 @@ watchPatterns = [
 
 [deploy]
 startCommand = "npm --workspace @ai-story-copilot/web run preview -- --port $PORT"
-healthcheckPath = "/"
+healthcheckPath = "/healthz"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
