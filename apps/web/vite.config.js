@@ -63,4 +63,7 @@ export default defineConfig({
   server: {
     port: 5183,
   },
+  preview: {
+    allowedHosts: true,
+  },
 });
